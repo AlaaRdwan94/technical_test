@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "7d454cf0-0ea5-41ef-9276-d43c38eefc31",
+		"name": "togo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/login?user_id=secondUser&password=example",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "secondUser"
+						},
+						{
+							"key": "password",
+							"value": "example"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ0MjM4NTAsInVzZXJfaWQiOiJzZWNvbmRVc2VyIn0.0D3zsJiFD7aUAcvhLT6eVpJG82PhqbVhAuebP7YWZy8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5050/tasks?created_date=2020-11-01",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "created_date",
+							"value": "2020-11-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ0MjcxMTEsInVzZXJfaWQiOiJzZWNvbmRVc2VyIn0.fYOV4p34oayNXeroZrYVJ1548NvilzY3kQXfJ4_NZEM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"third content\",\n    \"due_date\":\"3 days\",\n    \"assignee_id\" :\"thirdUser\",\n    \"status\":\"resolved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dashboard",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDQ0MjgwNzUsInVzZXJfaWQiOiJzZWNvbmRVc2VyIn0.I2jTD4tPHvFalKkhzN3YjQ1dZJsZnZzPOPAQvVUXT6E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5050/dashboard?created_date=2020-11-03",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"dashboard"
+					],
+					"query": [
+						{
+							"key": "created_date",
+							"value": "2020-11-03"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
