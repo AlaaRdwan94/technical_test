@@ -20,6 +20,7 @@ INSERT INTO users (id, password, max_todo) VALUES('thirdUser', 'example', 4);
 ## code 
 -- add TaskUpdate struct 
 -- add fields 
+```
     --------------------------------------
     name        |  type     |  json name 
     --------------------------------------
@@ -28,7 +29,7 @@ INSERT INTO users (id, password, max_todo) VALUES('thirdUser', 'example', 4);
     AssignerID  |  string  |`json:"assigner_id"` 
     AssigneeID  |  string  |`json:"assignee_id"` 
     TaskStatus  |  string  |`json:"status"` 
-
+```
 -- add AddTaskDate function in internal/storages/sqlite/db.go
    insert into `tasksdata` table 
 
@@ -37,6 +38,7 @@ INSERT INTO users (id, password, max_todo) VALUES('thirdUser', 'example', 4);
 
 -- add Tsk struct in internal/services/tasks.go
 -- add fields 
+```
     --------------------------------------
     name        |  type     |  json name 
     --------------------------------------
@@ -49,7 +51,7 @@ INSERT INTO users (id, password, max_todo) VALUES('thirdUser', 'example', 4);
     AssignerID  |  string  |`json:"assigner_id"` 
     AssigneeID  |  string  |`json:"assignee_id"` 
     TaskStatus  |  string  |`json:"status"` 
-
+```
 --add function RetrieveTasksData in internal/storages/sqlite/db.go
 to get task data by task id 
 
